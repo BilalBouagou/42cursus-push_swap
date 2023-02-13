@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:02:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/22 07:50:51 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:43:34 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] != '%')
-			list->count += write(2, &format[i], 1);
+			list->count += write(1, &format[i], 1);
 		else
 		{
 			ft_handler(format[++i], &list);

@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 06:59:56 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/24 07:02:02 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:24:19 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	sb(t_info *info)
 		info->b[1] = info->b[0];
 		info->b[0] = tmp;
 	}
+	ft_printf("sb\n");
 }

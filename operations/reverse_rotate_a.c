@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:23:51 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/24 10:27:56 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:22:29 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	rra(t_info *info)
 		free (info->a);
 		info->a = new_a;
 	}
+	ft_printf("rra\n");
 }

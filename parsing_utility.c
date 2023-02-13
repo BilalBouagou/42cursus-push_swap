@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:35:42 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/29 23:38:37 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:52:24 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	*allocate_and_assign(t_info *info, char *string)
 	new_stack = (int *)malloc(sizeof(int) * (info->a_size + 1));
 	if (!new_stack)
 	{
-		ft_printf("Error\nMalloc failure\n");
+		ft_printf("Error\n");
 		exit(-1);
 	}
 	while (++i < info->a_size)
@@ -90,7 +90,7 @@ static void	feed_to_stack(t_info *info, char *string)
 	{
 		if (ft_intlen(ft_atoi(integers[i])) != ft_strlen(integers[i]))
 		{
-			ft_printf("Error\nInteger exceeding INT_MAX or INT_MIN.\n");
+			ft_printf("Error\n");
 			exit(0);
 		}
 		if (info->a_size == 0)
@@ -121,7 +121,7 @@ static void	check_duplicates(t_info *info)
 		{
 			if (info->a[i] == info->a[j])
 			{
-				ft_printf("Error\nDuplicate number found.\n");
+				ft_printf("Error\n");
 				exit(0);
 			}
 		}
@@ -146,7 +146,7 @@ void	parse_args(t_info *info, char **args, int argnum)
 	{
 		if (!check_string(args[i]))
 		{
-			ft_printf("Error\nNone digit argument was found\n");
+			ft_printf("Error\n");
 			exit(0);
 		}
 		else
@@ -156,7 +156,7 @@ void	parse_args(t_info *info, char **args, int argnum)
 				info->a = (int *)malloc(sizeof(int));
 				if (!info->a)
 				{
-					ft_printf("Error\nMalloc failure.\n");
+					ft_printf("Error\n");
 					exit(-1);
 				}
 			}

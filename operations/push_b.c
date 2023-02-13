@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:09:18 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/31 02:16:43 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:22:17 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	anti_norminette(t_info *info, int flag, int *ptr)
 	{
 		free (info->a);
 		info->a = ptr;
+		ft_printf("pb\n");
 	}
 }
 
