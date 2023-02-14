@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/13 12:20:00 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:52:03 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,24 @@ void	sort_array(t_info *info)
 }
 
 /*
+** simple function to check if stack a is already sorted or not.
+*/
+
+int	check_stack(t_info *info)
+{
+	int	i;
+
+	i = 0;
+	while (i < info->c_size)
+	{
+		if (info->c[i] != info->a[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+/*
 ** idk what i'm doing here so im just gonna first
 ** create a third stack named c and sort it, it may
 ** be of use later on.
@@ -93,7 +111,8 @@ void	sort(t_info *info)
 	{
 		info->c[i] = info->a[i];
 		i++;
-	}
+	}	
 	sort_array(&(*info));
-	sort_stack(&(*info));
+	if (check_stack(&(*info)))
+		sort_stack(&(*info));
 }
