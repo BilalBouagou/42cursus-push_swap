@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 10:52:03 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:57:32 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,22 @@
 ** then push everything from stack b to stack a.
 */
 
-void	sort_stack(t_info *info)
+static void	sort_stack(t_info *info)
 {
 	int	i;
 	int	j;
 
-	j = 0;
-	while (j < info->c_size - 1)
-	{
-		i = 0;
-		while (info->a[i] != info->c[j])
-			i++;
-		if (i <= info->a_size)
-			while (info->a[0] != info->c[j])
-				ra(&(*info));
-		else
-			while (info->a[0] != info->c[j])
-				rra(&(*info));
-		pb(&(*info));
-		j++;
-	}
-	while (info->b_size)
-		pa(&(*info));
+	if (info->a_size <= 3)
+		sort_three(&(*info), info->c);
+	else if (info->a_size == 4)
+		sort_four(&(*info));
 }
 
 /*
 ** simple bubble sort to sort the c stack.
 */
 
-void	sort_array(t_info *info)
+static void	sort_array(t_info *info)
 {
 	size_t	i;
 	size_t	j;
@@ -75,7 +62,7 @@ void	sort_array(t_info *info)
 ** simple function to check if stack a is already sorted or not.
 */
 
-int	check_stack(t_info *info)
+static int	check_stack(t_info *info)
 {
 	int	i;
 

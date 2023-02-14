@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 09:53:19 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/13 12:22:10 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:49:23 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pa(t_info *info)
 		while (++i < info->a_size)
 			new_a[i + 1] = info->a[i];
 		new_a[0] = info->b[0];
-		if (info->b_size > 1)
+		if (info->b_size >= 1)
 		{
 			new_b = (int *)malloc(sizeof(int) * (info->b_size - 1));
 			i = -1;

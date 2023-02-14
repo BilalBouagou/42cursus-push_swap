@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 06:38:13 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/12 06:35:55 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:57:05 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ void	rrb(t_info *info);
 /*	SORTING UTILITY FUNCTIONS	*/
 
 void	sort(t_info *info);
+void	sort_three(t_info *info, int *c);
+void	sort_four(t_info *info);
 
 #endif
