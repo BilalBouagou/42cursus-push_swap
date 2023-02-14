@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:59:48 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 11:59:10 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:47:48 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,54 @@ void	sort_three(t_info *info, int *c)
 ** hard coding stacks of size 4
 */
 
-void	sort_four(t_info *info)
+void	sort_four(t_info *info, int *c)
 {
-	if (info->c[2] == info->a[0])
-		sa(&(*info));
+	int	i;
+
+	i = 0;
+	while (info->a[i] != info->c[0])
+		i++;
+	if (i <= 3)
+	{
+		while (c[0] != info->a[0])
+			ra(&(*info));
+	}
+	else
+		while (c[0] != info->a[0])
+			rra(&(*info));
 	pb(&(*info));
-	sort_three(&(*info), info->c + 1);
+	sort_three(&(*info), c + 1);
 	pa(&(*info));
-	if (info->c[1] == info->a[0])
+	if (c[1] == info->a[0])
 		sa(&(*info));
-	else if (info->c[3] == info->a[0])
+	else if (c[3] == info->a[0])
+		ra(&(*info));
+}
+
+/*
+** hard coding stacks of size 5
+*/
+
+void	sort_five(t_info *info, int *c)
+{
+	int	i;
+
+	i = 0;
+	while (info->a[i] != info->c[0])
+		i++;
+	if (i <= 3)
+	{
+		while (c[0] != info->a[0])
+			ra(&(*info));
+	}
+	else
+		while (c[0] != info->a[0])
+			rra(&(*info));
+	pb(&(*info));
+	sort_four(&(*info), &c[1]);
+	pa(&(*info));
+	if (c[1] == info->a[0])
+		sa(&(*info));
+	else if (c[4] == info->a[0])
 		ra(&(*info));
 }

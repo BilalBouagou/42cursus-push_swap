@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 11:57:32 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:19:12 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ static void	sort_stack(t_info *info)
 	if (info->a_size <= 3)
 		sort_three(&(*info), info->c);
 	else if (info->a_size == 4)
-		sort_four(&(*info));
+		sort_four(&(*info), info->c);
+	else if (info->a_size == 5)
+		sort_five(&(*info), info->c);
+	else
+		sort_rest(&(*info));
 }
 
 /*
