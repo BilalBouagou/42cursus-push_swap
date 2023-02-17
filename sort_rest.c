@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:54:55 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/17 16:49:20 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:50:41 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,36 @@ static int	get_index(t_info *info, int x)
 static void	empty_stack_a(t_info *info)
 {
 	int	i;
+	int	j;
 
 	while (info->a_size)
 	{
 		i = get_index(&(*info), info->a[0]);
-		if (i >= info->start && i <= info->end)
+		j = get_index(&(*info), info->a[info->a_size - 1]);
+		if ((i >= info->start && i <= info->end) || (j >= info->start && j <= info->end))
 		{
-			pb(&(*info));
+			if ((i >= info->start && i <= info->end))
+				pb(&(*info));
+			else
+			{
+				rra(&(*info));
+				pb(&(*info));
+			}
 			info->flag = 1;
 		}
-		else if (i < info->start)
+		else if (i < info->start || j < info->start)
 		{
-			pb(&(*info));
-			rb(&(*info));
+			if (i < info->start)
+			{
+				pb(&(*info));
+				rb(&(*info));
+			}
+			else
+			{
+				rrb(&(*info));
+				pb(&(*info));
+				rb(&(*info));
+			}
 			info->flag = 1;
 		}
 		else
