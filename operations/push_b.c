@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:09:18 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 11:49:29 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:50:36 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void	anti_norminette(t_info *info, int flag, int *ptr)
 {
 	if (flag)
 	{
+		if (info->b_size > 0)
+			free (info->b);
 		info->b_size++;
 		info->a_size--;
 	}
@@ -50,8 +52,7 @@ void	pb(t_info *info)
 		}
 		else
 			free (info->a);
-		free (info->b);
-		info->b = new_b;
 		anti_norminette(&(*info), 1, (void *)0);
+		info->b = new_b;
 	}
 }

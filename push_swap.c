@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 22:14:01 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/13 12:56:45 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:49:01 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 {
 	t_info	info;
 
+	info.flag = 0;
 	if (argc > 1)
 	{
 		init_struct(&info);

@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 06:38:13 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 17:18:42 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:48:52 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct s_info
 	size_t	a_size;
 	size_t	b_size;
 	size_t	c_size;
+	int		start;
+	int		end;
+	int		flag;
 }	t_info;
 
 /*	PARSING UTILITY FUNCTIONS	*/

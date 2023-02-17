@@ -6,7 +6,7 @@
 #    By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 04:50:06 by bbouagou          #+#    #+#              #
-#    Updated: 2023/01/29 23:15:27 by bbouagou         ###   ########.fr        #
+#    Updated: 2023/02/17 15:44:10 by bbouagou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ DEPS = push_swap.h
 all: libft $(NAME)
 
 $(NAME):
-	$(CC) *.c operations/*.c $(LIBFT) -o $(NAME)
+	$(CC) *.c operations/*.c $(LIBFT) -o $(NAME) 
 
 # $(NAME): $(OBJ)
 # 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
