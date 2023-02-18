@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 06:38:13 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/17 16:48:52 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 08:51:05 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ typedef struct s_info
 	t_stack	*a;
 	t_stack	*b;
 	t_stack	*c;
-	size_t	a_size;
-	size_t	b_size;
-	size_t	c_size;
+	int		a_size;
+	int		b_size;
+	int		c_size;
 	int		start;
 	int		end;
 	int		flag;
@@ -47,6 +47,7 @@ void	rb(t_info *info);
 void	rr(t_info *info);
 void	rra(t_info *info);
 void	rrb(t_info *info);
+void	rrr(t_info *info);
 
 /*	SORTING UTILITY FUNCTIONS	*/
 
@@ -55,5 +56,7 @@ void	sort_three(t_info *info, int *c);
 void	sort_four(t_info *info, int *c);
 void	sort_five(t_info *info, int *c);
 void	sort_rest(t_info *info);
+void	push_to_b_and_rotate(t_info *info, int i);
+void	push_to_stack_b(t_info *info, int i);
 
 #endif

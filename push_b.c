@@ -6,11 +6,11 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:09:18 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/17 15:50:36 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 07:58:38 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	anti_norminette(t_info *info, int flag, int *ptr)
 {

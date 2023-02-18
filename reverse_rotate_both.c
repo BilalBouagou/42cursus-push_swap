@@ -6,11 +6,11 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:29:24 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/13 12:23:32 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 07:58:56 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	rrr(t_info *info)
 {

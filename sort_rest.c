@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:54:55 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/17 18:50:41 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 07:11:02 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,14 @@ static void	empty_stack_a(t_info *info)
 	{
 		i = get_index(&(*info), info->a[0]);
 		j = get_index(&(*info), info->a[info->a_size - 1]);
-		if ((i >= info->start && i <= info->end) || (j >= info->start && j <= info->end))
+		if ((i >= info->start && i <= info->end)
+			|| (j >= info->start && j <= info->end))
 		{
-			if ((i >= info->start && i <= info->end))
-				pb(&(*info));
-			else
-			{
-				rra(&(*info));
-				pb(&(*info));
-			}
-			info->flag = 1;
+			push_to_stack_b(&(*info), i);
 		}
 		else if (i < info->start || j < info->start)
 		{
-			if (i < info->start)
-			{
-				pb(&(*info));
-				rb(&(*info));
-			}
-			else
-			{
-				rrb(&(*info));
-				pb(&(*info));
-				rb(&(*info));
-			}
-			info->flag = 1;
+			push_to_b_and_rotate(&(*info), i);
 		}
 		else
 			ra(&(*info));

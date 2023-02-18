@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/17 15:28:23 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 08:59:20 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@
 
 static void	sort_stack(t_info *info)
 {
-	int	i;
-	int	j;
-
 	if (info->a_size <= 3)
 		sort_three(&(*info), info->c);
 	else if (info->a_size == 4)
@@ -40,9 +37,9 @@ static void	sort_stack(t_info *info)
 
 static void	sort_array(t_info *info)
 {
-	size_t	i;
-	size_t	j;
-	int		tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < info->c_size)
@@ -88,7 +85,7 @@ static int	check_stack(t_info *info)
 
 void	sort(t_info *info)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	info->c = (int *)malloc(sizeof(int) * info->a_size);

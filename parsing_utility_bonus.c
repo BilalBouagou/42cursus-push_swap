@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_utility.c                                  :+:      :+:    :+:   */
+/*   parsing_utility_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:35:42 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 08:05:24 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 08:48:44 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 /*
 ** Loops over a string and checks if each character is a digit.
@@ -137,7 +137,7 @@ static void	check_duplicates(t_info *info)
 ** Lastly, it checks for duplicates by calling the check_duplicates function.
 */
 
-void	parse_args(t_info *info, char **args, int argnum)
+void	parse(t_info *info, char **args, int argnum)
 {
 	int	i;
 

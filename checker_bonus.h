@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_both.c                                      :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 10:21:52 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/24 10:22:52 by bbouagou         ###   ########.fr       */
+/*   Created: 2023/02/18 07:14:19 by bbouagou          #+#    #+#             */
+/*   Updated: 2023/02/18 08:49:41 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-void	rr(t_info *info)
-{
-	ra(&(*info));
-	rb(&(*info));
-}
+# include "libft/libft.h"
+# include <unistd.h>
+# include "push_swap.h"
+
+void	parse(t_info *info, char **args, int argnum);
+
+#endif

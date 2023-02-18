@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_b.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 06:59:56 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/13 12:24:19 by bbouagou         ###   ########.fr       */
+/*   Created: 2023/01/24 10:28:14 by bbouagou          #+#    #+#             */
+/*   Updated: 2023/02/18 07:58:53 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	sb(t_info *info)
+void	rrb(t_info *info)
 {
-	int	tmp;
+	int	*new_b;
+	int	i;
 
-	tmp = 0;
-	if (info->b_size)
+	i = -1;
+	if (info->b_size > 1)
 	{
-		tmp = info->b[1];
-		info->b[1] = info->b[0];
-		info->b[0] = tmp;
+		new_b = (int *)malloc(sizeof(int) * info->b_size);
+		while (++i < (info->b_size - 1))
+			new_b[i + 1] = info->b[i];
+		new_b[0] = info->b[i];
+		free (info->b);
+		info->b = new_b;
 	}
-	ft_printf("sb\n");
+	ft_printf("rrb\n");
 }
