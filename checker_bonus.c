@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 09:27:30 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:39:46 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ static int	check_instruction(char *str)
 		|| !ft_strncmp(str, "rr", ft_strlen(str) - 1)
 		|| !ft_strncmp(str, "rra", ft_strlen(str) - 1)
 		|| !ft_strncmp(str, "rrb", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rrr", ft_strlen(str) - 1))
+		|| !ft_strncmp(str, "rrr", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "pb", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "pa", ft_strlen(str) - 1))
 		return (1);
 	return (0);
 }
@@ -51,6 +53,10 @@ static void	apply_instruction(char *str, t_info *info)
 		rrb(&(*info), 0);
 	else if (!ft_strncmp(str, "rr", ft_strlen(str) - 1))
 		rr(&(*info));
+	else if (!ft_strncmp(str, "pa", ft_strlen(str) - 1))
+		pa(&(*info), 0);
+	else if (!ft_strncmp(str, "pb", ft_strlen(str) - 1))
+		pb(&(*info), 0);
 	else
 		rrr(&(*info));
 }

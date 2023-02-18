@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:35:42 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 08:48:44 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:31:04 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ static int	check_string(char *string)
 	{
 		if (ft_isdigit(string[i]))
 			j++;
-		else if ((string[i] != ' ' && string[i] != '-')
-			|| (string[i] == '-' && !ft_isdigit(string[i + 1])))
+		else if ((string[i] != ' ' && string[i] != '-' && string[i] != '+')
+			|| (string[i] == '-' && !ft_isdigit(string[i + 1]))
+			|| (string[i] == '+' && !ft_isdigit(string[i + 1])))
 			return (0);
 	}
 	if (!j)
@@ -81,26 +82,31 @@ static int	*allocate_and_assign(t_info *info, char *string)
 
 static void	feed_to_stack(t_info *info, char *string)
 {
-	char	**integers;
+	char	**ints;
 	int		i;
+	size_t	size;
 
 	i = -1;
-	integers = ft_split(string, ' ');
-	while (integers[++i])
+	ints = ft_split(string, ' ');
+	while (ints[++i])
 	{
-		if (ft_intlen(ft_atoi(integers[i])) != ft_strlen(integers[i]))
+		if (ints[i][0] == '+' || (ints[i][0] == '-' && ft_atoi(ints[i]) == 0))
+			size = ft_strlen(ints[i]) - 1;
+		else
+			size = ft_strlen(ints[i]);
+		if (ft_intlen(ft_atoi(ints[i])) != size)
 		{
 			ft_printf("Error\n");
 			exit(0);
 		}
 		if (info->a_size == 0)
-			info->a[0] = ft_atoi(integers[i]);
+			info->a[0] = ft_atoi(ints[i]);
 		else
-			info->a = allocate_and_assign(&(*info), integers[i]);
+			info->a = allocate_and_assign(&(*info), ints[i]);
 		info->a_size++;
-		free (integers[i]);
+		free (ints[i]);
 	}
-	free (integers);
+	free (ints);
 }
 
 /*
