@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 08:57:58 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:27:30 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@ static void	init_struct(t_info *info)
 
 static int	check_instruction(char *str)
 {
-	if (!ft_strncmp(str, "sa", 2) || !ft_strncmp(str, "sb", 2)
-		|| !ft_strncmp(str, "ss", 2) || !ft_strncmp(str, "ra", 2)
-		|| !ft_strncmp(str, "rb", 2) || !ft_strncmp(str, "rr", 2)
-		|| !ft_strncmp(str, "rra", 3) || !ft_strncmp(str, "rrb", 3)
-		|| !ft_strncmp(str, "rrr", 3))
+	if (!ft_strncmp(str, "sa", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "sb", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "ss", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "ra", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "rb", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "rr", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "rra", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "rrb", ft_strlen(str) - 1)
+		|| !ft_strncmp(str, "rrr", ft_strlen(str) - 1))
 		return (1);
 	return (0);
 }
@@ -32,20 +36,20 @@ static int	check_instruction(char *str)
 static void	apply_instruction(char *str, t_info *info)
 {
 	if (!ft_strncmp(str, "sa", 2))
-		sa(&(*info));
-	else if (!ft_strncmp(str, "sb", 2))
-		sb(&(*info));
-	else if (!ft_strncmp(str, "ss", 2))
+		sa(&(*info), 0);
+	else if (!ft_strncmp(str, "sb", ft_strlen(str) - 1))
+		sb(&(*info), 0);
+	else if (!ft_strncmp(str, "ss", ft_strlen(str) - 1))
 		ss(&(*info));
-	else if (!ft_strncmp(str, "ra", 2))
-		ra(&(*info));
-	else if (!ft_strncmp(str, "rb", 2))
-		rb(&(*info));
-	else if (!ft_strncmp(str, "rra", 3))
-		rra(&(*info));
-	else if (!ft_strncmp(str, "rrb", 3))
-		rrb(&(*info));
-	else if (!ft_strncmp(str, "rr", 2))
+	else if (!ft_strncmp(str, "ra", ft_strlen(str) - 1))
+		ra(&(*info), 0);
+	else if (!ft_strncmp(str, "rb", ft_strlen(str) - 1))
+		rb(&(*info), 0);
+	else if (!ft_strncmp(str, "rra", ft_strlen(str) - 1))
+		rra(&(*info), 0);
+	else if (!ft_strncmp(str, "rrb", ft_strlen(str) - 1))
+		rrb(&(*info), 0);
+	else if (!ft_strncmp(str, "rr", ft_strlen(str) - 1))
 		rr(&(*info));
 	else
 		rrr(&(*info));
@@ -61,10 +65,10 @@ static int	sort_array(t_info *info)
 	tmp = 0;
 	while (i < info->a_size)
 	{
-		j = 0;
+		j = i + 1;
 		while (j < info->a_size)
 		{
-			if (info->a[i] < info->a[j])
+			if (info->a[i] > info->a[j])
 				tmp++;
 			j++;
 		}

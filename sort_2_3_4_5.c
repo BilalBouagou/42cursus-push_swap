@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:59:48 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/14 16:47:48 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:19:46 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	void	sort_two(t_info *info)
 {
 	if (info->a[0] > info->a[1])
-		sa(&(*info));
+		sa(&(*info), 1);
 }
 
 /*
@@ -29,20 +29,20 @@ void	sort_three(t_info *info, int *c)
 	else if (info->a_size == 2)
 		sort_two(&(*info));
 	if (c[0] == info->a[1] && info->a[2] == c[2])
-		sa(&(*info));
+		sa(&(*info), 1);
 	else if (c[0] == info->a[2] && c[2] == info->a[1])
-		rra(&(*info));
+		rra(&(*info), 1);
 	else if (c[2] == info->a[0] && c[0] == info->a[1])
-		ra(&(*info));
+		ra(&(*info), 1);
 	else if (c[2] == info->a[0] && c[0] == info->a[2])
 	{
-		sa(&(*info));
-		rra(&(*info));
+		sa(&(*info), 1);
+		rra(&(*info), 1);
 	}
 	else if (c[1] == info->a[2] && c[2] == info->a[1])
 	{
-		rra(&(*info));
-		sa(&(*info));
+		rra(&(*info), 1);
+		sa(&(*info), 1);
 	}
 }
 
@@ -60,18 +60,18 @@ void	sort_four(t_info *info, int *c)
 	if (i <= 3)
 	{
 		while (c[0] != info->a[0])
-			ra(&(*info));
+			ra(&(*info), 1);
 	}
 	else
 		while (c[0] != info->a[0])
-			rra(&(*info));
-	pb(&(*info));
+			rra(&(*info), 1);
+	pb(&(*info), 1);
 	sort_three(&(*info), c + 1);
-	pa(&(*info));
+	pa(&(*info), 1);
 	if (c[1] == info->a[0])
-		sa(&(*info));
+		sa(&(*info), 1);
 	else if (c[3] == info->a[0])
-		ra(&(*info));
+		ra(&(*info), 1);
 }
 
 /*
@@ -88,16 +88,16 @@ void	sort_five(t_info *info, int *c)
 	if (i <= 3)
 	{
 		while (c[0] != info->a[0])
-			ra(&(*info));
+			ra(&(*info), 1);
 	}
 	else
 		while (c[0] != info->a[0])
-			rra(&(*info));
-	pb(&(*info));
+			rra(&(*info), 1);
+	pb(&(*info), 1);
 	sort_four(&(*info), &c[1]);
-	pa(&(*info));
+	pa(&(*info), 1);
 	if (c[1] == info->a[0])
-		sa(&(*info));
+		sa(&(*info), 1);
 	else if (c[4] == info->a[0])
-		ra(&(*info));
+		ra(&(*info), 1);
 }

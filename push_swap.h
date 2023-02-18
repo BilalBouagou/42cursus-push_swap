@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 06:38:13 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 08:51:05 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:13:30 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ void	parse_args(t_info *info, char **args, int argnum);
 
 /*	OPERATIONS	*/
 
-void	sa(t_info *info);
-void	sb(t_info *info);
+void	sa(t_info *info, int flag);
+void	sb(t_info *info, int flag);
 void	ss(t_info *info);
-void	pa(t_info *info);
-void	pb(t_info *info);
-void	ra(t_info *info);
-void	rb(t_info *info);
+void	pa(t_info *info, int flag);
+void	pb(t_info *info, int flag);
+void	ra(t_info *info, int flag);
+void	rb(t_info *info, int flag);
 void	rr(t_info *info);
-void	rra(t_info *info);
-void	rrb(t_info *info);
+void	rra(t_info *info, int flag);
+void	rrb(t_info *info, int flag);
 void	rrr(t_info *info);
 
 /*	SORTING UTILITY FUNCTIONS	*/

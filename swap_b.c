@@ -6,13 +6,13 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 06:59:56 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 07:59:12 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:14:41 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(t_info *info)
+void	sb(t_info *info, int flag)
 {
 	int	tmp;
 
@@ -23,5 +23,6 @@ void	sb(t_info *info)
 		info->b[1] = info->b[0];
 		info->b[0] = tmp;
 	}
-	ft_printf("sb\n");
+	if (flag)
+		ft_printf("sb\n");
 }

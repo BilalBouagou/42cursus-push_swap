@@ -6,13 +6,13 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 09:53:19 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 07:58:35 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:09:12 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	anti_norminette(t_info *info, int flag, int *ptr)
+static void	anti_norminette(t_info *info, int flag, int *ptr, int i)
 {
 	if (flag)
 	{
@@ -25,11 +25,12 @@ static void	anti_norminette(t_info *info, int flag, int *ptr)
 	{
 		free (info->b);
 		info->b = ptr;
-		ft_printf("pa\n");
+		if (i)
+			ft_printf("pa\n");
 	}
 }
 
-void	pa(t_info *info)
+void	pa(t_info *info, int flag)
 {
 	int	*new_a;
 	int	*new_b;
@@ -48,11 +49,11 @@ void	pa(t_info *info)
 			i = -1;
 			while (++i < (info->b_size - 1))
 				new_b[i] = info->b[i + 1];
-			anti_norminette(&(*info), 0, new_b);
+			anti_norminette(&(*info), 0, new_b, flag);
 		}
 		else
 			free (info->b);
-		anti_norminette(&(*info), 1, (void *)0);
+		anti_norminette(&(*info), 1, (void *)0, flag);
 		info->a = new_a;
 	}
 }

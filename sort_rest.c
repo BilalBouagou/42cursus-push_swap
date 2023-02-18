@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 17:54:55 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 07:11:02 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:18:42 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	empty_stack_a(t_info *info)
 			push_to_b_and_rotate(&(*info), i);
 		}
 		else
-			ra(&(*info));
+			ra(&(*info), 1);
 		if (info->end < info->c_size && info->flag)
 		{
 			info->end++;
@@ -70,7 +70,7 @@ static void	push_back_to_a(t_info *info)
 	{
 		if (info->b[0] == info->c[i])
 		{
-			pa(&(*info));
+			pa(&(*info), 1);
 			i--;
 		}
 		else
@@ -79,9 +79,9 @@ static void	push_back_to_a(t_info *info)
 			while (info->b[j] != info->c[i])
 				j++;
 			if (j <= info->b_size / 2)
-				rb(&(*info));
+				rb(&(*info), 1);
 			else
-				rrb(&(*info));
+				rrb(&(*info), 1);
 		}
 	}
 }

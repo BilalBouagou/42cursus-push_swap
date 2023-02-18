@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:23:51 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 07:58:49 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:12:15 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** The last element becomes the first one.
 */
 
-void	rra(t_info *info)
+void	rra(t_info *info, int flag)
 {
 	int	*new_a;
 	int	i;
@@ -32,5 +32,6 @@ void	rra(t_info *info)
 		free (info->a);
 		info->a = new_a;
 	}
-	ft_printf("rra\n");
+	if (flag)
+		ft_printf("rra\n");
 }

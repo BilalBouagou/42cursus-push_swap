@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:21:52 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 07:59:03 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:20:52 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	rr(t_info *info)
 {
-	ra(&(*info));
-	rb(&(*info));
+	ra(&(*info), 0);
+	rb(&(*info), 0);
+	ft_printf("rr\n");
 }
