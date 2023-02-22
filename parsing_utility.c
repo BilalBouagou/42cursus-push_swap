@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:35:42 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 11:30:40 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 21:43:09 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	*allocate_and_assign(t_info *info, char *string)
 	new_stack = (int *)malloc(sizeof(int) * (info->a_size + 1));
 	if (!new_stack)
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		exit(-1);
 	}
 	while (++i < info->a_size)
@@ -96,7 +96,7 @@ static void	feed_to_stack(t_info *info, char *string)
 			size = ft_strlen(ints[i]);
 		if (ft_intlen(ft_atoi(ints[i])) != size)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			exit(0);
 		}
 		if (info->a_size == 0)
@@ -127,7 +127,7 @@ static void	check_duplicates(t_info *info)
 		{
 			if (info->a[i] == info->a[j])
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				exit(0);
 			}
 		}
@@ -152,7 +152,7 @@ void	parse_args(t_info *info, char **args, int argnum)
 	{
 		if (!check_string(args[i]))
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 			exit(0);
 		}
 		else
@@ -162,7 +162,7 @@ void	parse_args(t_info *info, char **args, int argnum)
 				info->a = (int *)malloc(sizeof(int));
 				if (!info->a)
 				{
-					ft_printf("Error\n");
+					write(2, "Error\n", 6);
 					exit(-1);
 				}
 			}

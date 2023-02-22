@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:28:14 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 09:12:30 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 21:36:30 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	rrb(t_info *info, int flag)
 {
-	int	*new_b;
 	int	i;
+	int	tmp;
 
-	i = -1;
 	if (info->b_size > 1)
 	{
-		new_b = (int *)malloc(sizeof(int) * info->b_size);
-		while (++i < (info->b_size - 1))
-			new_b[i + 1] = info->b[i];
-		new_b[0] = info->b[i];
-		free (info->b);
-		info->b = new_b;
+		i = info->b_size - 1;
+		tmp = info->b[info->b_size - 1];
+		while (--i >= 0)
+			info->b[i + 1] = info->b[i];
+		info->b[0] = tmp;
+		if (flag)
+			ft_printf("rrb\n");
 	}
-	if (flag)
-		ft_printf("rrb\n");
 }

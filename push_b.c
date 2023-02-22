@@ -6,54 +6,31 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:09:18 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 09:11:48 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:56:00 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	anti_norminette(t_info *info, int flag, int *ptr, int i)
-{
-	if (flag)
-	{
-		if (info->b_size > 0)
-			free (info->b);
-		info->b_size++;
-		info->a_size--;
-	}
-	else
-	{
-		free (info->a);
-		info->a = ptr;
-		if (i)
-			ft_printf("pb\n");
-	}
-}
-
 void	pb(t_info *info, int flag)
 {
-	int	*new_a;
-	int	*new_b;
 	int	i;
 
-	i = -1;
 	if (info->a_size > 0)
 	{
-		new_b = (int *)malloc(sizeof(int) * (info->b_size + 1));
-		while (++i < info->b_size)
-			new_b[i + 1] = info->b[i];
-		new_b[0] = info->a[0];
-		if (info->a_size >= 1)
-		{
-			new_a = (int *)malloc(sizeof(int) * (info->a_size - 1));
-			i = -1;
-			while (++i < (info->a_size - 1))
-				new_a[i] = info->a[i + 1];
-			anti_norminette(&(*info), 0, new_a, flag);
-		}
-		else
-			free (info->a);
-		anti_norminette(&(*info), 1, (void *)0, flag);
-		info->b = new_b;
+		i = 0;
+		if (info->b_size)
+			i = info->b_size;
+		while (--i >= 0)
+			info->b[i + 1] = info->b[i];
+		info->b[0] = info->a[0];
+		i = -1;
+		while (++i < info->a_size - 1)
+			info->a[i] = info->a[i + 1];
+		info->b_size++;
+		info->a_size--;
+		i = -1;
+		if (flag)
+			ft_printf("pb\n");
 	}
 }

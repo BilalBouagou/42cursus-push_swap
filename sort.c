@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 08:59:20 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:01:18 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,6 @@ void	sort(t_info *info)
 	int	i;
 
 	i = 0;
-	info->c = (int *)malloc(sizeof(int) * info->a_size);
-	if (!info->c)
-	{
-		ft_printf("Error\nMalloc failure.\n");
-		exit(-1);
-	}
 	info->c_size = info->a_size;
 	while (i < info->c_size)
 	{

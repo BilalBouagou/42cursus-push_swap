@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:23:51 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 09:12:15 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 21:37:52 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,17 @@
 
 void	rra(t_info *info, int flag)
 {
-	int	*new_a;
 	int	i;
+	int	tmp;
 
-	i = -1;
 	if (info->a_size > 1)
 	{
-		new_a = (int *)malloc(sizeof(int) * info->a_size);
-		while (++i < (info->a_size - 1))
-			new_a[i + 1] = info->a[i];
-		new_a[0] = info->a[i];
-		free (info->a);
-		info->a = new_a;
+		i = info->a_size - 1;
+		tmp = info->a[info->a_size - 1];
+		while (--i >= 0)
+			info->a[i + 1] = info->a[i];
+		info->a[0] = tmp;
+		if (flag)
+			ft_printf("rra\n");
 	}
-	if (flag)
-		ft_printf("rra\n");
 }
