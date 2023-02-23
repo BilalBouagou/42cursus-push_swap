@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 11:39:46 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:29:58 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,26 +61,18 @@ static void	apply_instruction(char *str, t_info *info)
 		rrr(&(*info));
 }
 
-static int	sort_array(t_info *info)
+static int	check_array(t_info *info)
 {
 	int	i;
-	int	j;
-	int	tmp;
 
 	i = 0;
-	tmp = 0;
-	while (i < info->a_size)
+	while (i < info->a_size - 1)
 	{
-		j = i + 1;
-		while (j < info->a_size)
-		{
-			if (info->a[i] > info->a[j])
-				tmp++;
-			j++;
-		}
+		if (info->a[i] > info->a[i + 1])
+			return (0);
 		i++;
 	}
-	return (tmp);
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -92,22 +84,22 @@ int	main(int argc, char **argv)
 	{
 		init_struct(&info);
 		parse(&info, argv + 1, argc - 1);
+		info.b = (int *)malloc(sizeof(int) * info.a_size);
 		string = get_next_line(0);
 		while (string)
 		{
 			if (!check_instruction(string))
 			{
-				ft_printf("Error\n");
+				write(2, "Error\n", 6);
 				return (0);
 			}
 			else
 				apply_instruction(string, &info);
 			string = get_next_line(0);
 		}
-		if (!sort_array(&info) && !info.b_size)
+		if (check_array(&info))
 			ft_printf("OK\n");
 		else
 			ft_printf("KO\n");
 	}
-	return (0);
 }

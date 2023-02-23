@@ -6,7 +6,7 @@
 #    By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 12:14:02 by bbouagou          #+#    #+#              #
-#    Updated: 2023/01/23 01:46:27 by bbouagou         ###   ########.fr        #
+#    Updated: 2023/02/22 23:52:03 by bbouagou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o\
 ft_putendl_fd.o ft_putnbr_fd.o ft_printf.o ft_itoau.o ft_putchar_.o ft_putstr_.o\
 ft_putnbr_.o ft_putptr_.o ft_puthex_.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o\
 ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o\
-ft_lstmap.o get_next_line.o get_next_line_utils.o ft_pow.o ft_binary_to_decimal.o ft_intlen.o
+ft_lstmap.o get_next_line.o get_next_line_utils.o ft_pow.o ft_binary_to_decimal.o ft_intlen.o ft_intstrlen.o
 
 %.o: %.c $(DEPS)
 	$(CC) -c $< $(CFLAGS)

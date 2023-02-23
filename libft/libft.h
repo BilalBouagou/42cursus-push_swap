@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:06:50 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/01/24 04:55:26 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:51:52 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int			ft_pow(int num, int power);
 int			binary_to_decimal(char *byte);
 size_t		ft_intlen(int n);
 size_t		ft_strlen(const char *s);
+size_t		ft_intstrlen(char *str);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *s, int c);

@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 01:35:42 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/22 21:43:09 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:57:22 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,12 @@ static void	feed_to_stack(t_info *info, char *string)
 
 	i = -1;
 	ints = ft_split(string, ' ');
+	size = 0;
 	while (ints[++i])
 	{
-		if (ints[i][0] == '+' || (ints[i][0] == '-' && ft_atoi(ints[i]) == 0))
-			size = ft_strlen(ints[i]) - 1;
-		else
-			size = ft_strlen(ints[i]);
+		size = ft_intstrlen(ints[i]);
+		if (ints[i][0] == '-' || !size)
+			size++;
 		if (ft_intlen(ft_atoi(ints[i])) != size)
 		{
 			write(2, "Error\n", 6);
