@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/24 22:36:27 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/24 23:24:54 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,42 +20,42 @@ static void	init_struct(t_info *info)
 
 static int	check_instruction(char *str)
 {
-	if (!ft_strncmp(str, "sa", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "sb", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "ss", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "ra", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rb", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rr", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rra", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rrb", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "rrr", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "pb", ft_strlen(str) - 1)
-		|| !ft_strncmp(str, "pa", ft_strlen(str) - 1))
+	if (!ft_strcmp(str, "sa\n")
+		|| !ft_strcmp(str, "sb\n")
+		|| !ft_strcmp(str, "ss\n")
+		|| !ft_strcmp(str, "ra\n")
+		|| !ft_strcmp(str, "rb\n")
+		|| !ft_strcmp(str, "rr\n")
+		|| !ft_strcmp(str, "rra\n")
+		|| !ft_strcmp(str, "rrb\n")
+		|| !ft_strcmp(str, "rrr\n")
+		|| !ft_strcmp(str, "pb\n")
+		|| !ft_strcmp(str, "pa\n"))
 		return (1);
 	return (0);
 }
 
 static void	apply_instruction(char *str, t_info *info)
 {
-	if (!ft_strncmp(str, "sa", 2))
+	if (!ft_strcmp(str, "sa\n"))
 		sa(&(*info), 0);
-	else if (!ft_strncmp(str, "sb", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "sb\n"))
 		sb(&(*info), 0);
-	else if (!ft_strncmp(str, "ss", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "ss\n"))
 		ss(&(*info));
-	else if (!ft_strncmp(str, "ra", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "ra\n"))
 		ra(&(*info), 0);
-	else if (!ft_strncmp(str, "rb", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "rb\n"))
 		rb(&(*info), 0);
-	else if (!ft_strncmp(str, "rra", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "rra\n"))
 		rra(&(*info), 0);
-	else if (!ft_strncmp(str, "rrb", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "rrb\n"))
 		rrb(&(*info), 0);
-	else if (!ft_strncmp(str, "rr", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "rr\n"))
 		rr(&(*info));
-	else if (!ft_strncmp(str, "pa", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "pa\n"))
 		pa(&(*info), 0);
-	else if (!ft_strncmp(str, "pb", ft_strlen(str) - 1))
+	else if (!ft_strcmp(str, "pb\n"))
 		pb(&(*info), 0);
 	else
 		rrr(&(*info));
