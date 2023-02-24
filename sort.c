@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:34:31 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/22 20:01:18 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/24 22:26:38 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	sort(t_info *info)
 	{
 		info->c[i] = info->a[i];
 		i++;
-	}	
+	}
 	sort_array(&(*info));
 	if (check_stack(&(*info)))
 		sort_stack(&(*info));

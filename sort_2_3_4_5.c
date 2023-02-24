@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:59:48 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/18 09:19:46 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/24 22:27:17 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	sort_four(t_info *info, int *c)
 	int	i;
 
 	i = 0;
-	while (info->a[i] != info->c[0])
+	while (info->a[i] != c[0])
 		i++;
 	if (i <= 3)
 	{

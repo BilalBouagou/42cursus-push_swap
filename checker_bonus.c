@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/23 00:29:58 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/24 22:36:27 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	apply_instruction(char *str, t_info *info)
 		pb(&(*info), 0);
 	else
 		rrr(&(*info));
+	free (str);
 }
 
 static int	check_array(t_info *info)
