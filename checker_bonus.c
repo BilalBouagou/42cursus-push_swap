@@ -6,7 +6,7 @@
 /*   By: bbouagou <bbouagou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 07:15:10 by bbouagou          #+#    #+#             */
-/*   Updated: 2023/02/24 23:24:54 by bbouagou         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:36:35 by bbouagou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	main(int argc, char **argv)
 				apply_instruction(string, &info);
 			string = get_next_line(0);
 		}
-		if (check_array(&info))
+		if (check_array(&info) && !info.b_size)
 			ft_printf("OK\n");
 		else
 			ft_printf("KO\n");
